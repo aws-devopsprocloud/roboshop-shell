@@ -52,6 +52,9 @@ else
     cd /app &>> $LOGFILE
     VALIDATE $? "Going to /app directory"
 
+    rm -rf /app/* &>> $LOGFILE
+    VALIDATE $? "Removing the existing code"
+
     unzip /tmp/catalogue.zip &>> $LOGFILE
     VALIDATE $? "Unzipping catalogue.zip"
 
