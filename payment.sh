@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+# this script is latestly edited on Windows PC
+
 ID=$(id -u)
 
 R="\e[31m"
