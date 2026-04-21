@@ -41,3 +41,4 @@ else
 
     systemctl restart mongod &>> $LOGFILE
     VALIDATE $? "Restarting Mongodb"
+fi
