@@ -73,7 +73,7 @@ else
     systemctl start shipping &>> $LOGFILE
     VALIDATE $? "Starting Shipping"
 
-    systemctl install mysql -y &>> $LOGFILE
+    dnf install mysql -y &>> $LOGFILE
     VALIDATE $? "Installing MySQL Client" 
 
     mysql -h mysql.devopsprocloud.in -uroot -pRoboShop@1 < /app/db/schema.sql &>> $LOGFILE
