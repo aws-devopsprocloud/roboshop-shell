@@ -52,7 +52,7 @@ else
     unzip /tmp/frontend.zip &>> $LOGFILE
     VALIDATE $? "Unzipping frontend.zip"  
 
-    cp /home/ec2-user/nginx.conf /etc/nginx/nginx.conf &>> $LOGFILE
+    cp /home/ec2-user/roboshop-shell/nginx.conf /etc/nginx/nginx.conf &>> $LOGFILE
     VALIDATE $? "Copying nginx.conf"  
 
     systemctl restart nginx &>> $LOGFILE
