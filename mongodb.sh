@@ -14,15 +14,15 @@ LOGFILE=/tmp/$0-$DATE.log
 VALIDATE () {
     if [ $1 -ne 0 ]
     then 
-        echo "ERROR: $2 ...is $R FAILED $N"
+        echo -e "ERROR: $2 ...is $R FAILED $N"
     else 
-        echo "$2....is $G SUCCESS $N"
+        echo -e "$2....is $G SUCCESS $N"
     fi
 }
 
 if [ $ID -ne 0 ]
 then 
-    echo "$R ERROR: Please run thios script with root access $N"
+    echo -e "$R ERROR: Please run thios script with root access $N"
 else 
     cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
     VALIDATE $? "Copying Mongo Repo" 
