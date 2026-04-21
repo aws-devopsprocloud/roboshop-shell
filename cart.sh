@@ -64,7 +64,7 @@ else
     npm install &>> $LOGFILE
     VALIDATE $? "Installing Dependencies"
 
-    cp /home/ec2-cart/roboshop-shell/cart.service /etc/systemd/system/cart.service &>> $LOGFILE
+    cp /home/ec2-user/roboshop-shell/cart.service /etc/systemd/system/cart.service &>> $LOGFILE
     VALIDATE $? "Copying Cart Service"
 
     systemctl daemon-reload &>> $LOGFILE
