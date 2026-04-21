@@ -27,3 +27,17 @@ then
 else 
     dnf module disable redis -y &>> $LOGFILE
     VALIDATE $? "Disabling Redis" 
+
+    dnf module enable redis:7 -y &>> $LOGFILE
+    VALIDATE $? "Disabling Redis:7" 
+
+    sed 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf &>> $LOGFILE
+    VALIDATE $? "Allowing Remote Connections" 
+
+    systemctl enable redis &>> $LOGFILE
+    VALIDATE $? "Enabling Redis" 
+    
+    systemctl start redis &>> $LOGFILE
+    VALIDATE $? "Starting Redis" 
+
+fi
