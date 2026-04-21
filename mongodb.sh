@@ -24,8 +24,7 @@ if [ $ID -ne 0 ]
 then 
     echo -e "$R ERROR: Please run this script with root access $N"
 else 
-    cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
-    VALIDATE $? "Copying Mongo Repo" 
+      
 
     dnf install mongodb-org -y &>> $LOGFILE
     VALIDATE $? "Installing Mongodb"
