@@ -82,7 +82,7 @@ else
     dnf install mongodb-mongosh -y &>> $LOGFILE
     VALIDATE $? "Installing Mongodb Client"
 
-    mongosh --host 172.31.37.170 </app/db/master-data.js &>> $LOGFILE
+    mongosh --host mongodb.devopsprocloud.in </app/db/master-data.js &>> $LOGFILE
     VALIDATE $? "Inserting catalogue data into mongodb"
 
 fi
