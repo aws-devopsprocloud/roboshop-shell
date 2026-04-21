@@ -25,7 +25,7 @@ then
     echo -e "$R ERROR: Please run this script with root access $N"
 else 
       
-    cp /home/ec2-user/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+    cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
     VALIDATE $? "Copying Mongodb Repo"
 
     dnf install mongodb-org -y &>> $LOGFILE
